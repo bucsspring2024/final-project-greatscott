@@ -1,9 +1,6 @@
 import pygame
 pygame.init()
-screen = pygame.display.set_mode()
 
-
-#import your controller
 screen = pygame.display.set_mode()
 width, height = pygame.display.get_window_size()
 print (width, height)
@@ -86,25 +83,15 @@ def question_two():
 
     
 
-
-
-def main():
-    #Create an instance on your controller object
-    #Call your mainloop
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                exit()
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_position = pygame.mouse.get_pos()
-                if pygame.Rect.collidepoint(purple, mouse_position):
-                    screen.fill("white")
-                    pygame.display.flip()
-                    question_one()
-                    question_two()
-    ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
-
-# https://codefather.tech/blog/if-name-main-python/
-if __name__ == '__main__':
-    main()
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_position = pygame.mouse.get_pos()
+            if pygame.Rect.collidepoint(purple, mouse_position):
+                screen.fill("white")
+                pygame.display.flip()
+                question_one()
+                question_two()
